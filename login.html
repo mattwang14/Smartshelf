@@ -1,0 +1,56 @@
+{% extends "base_layout.html" %}
+
+{% block content %}
+<div class="form-background">
+ <div class="panel-container">
+    <div class="input-panel card justify-content-center align-items-center bg-light">
+      <a href="{{ url_for('index') }}">< Back</a>
+
+      <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group border-bottom pb-2  d-flex justify-content-center">
+          <h1 class="d-flex justify-content-center" style="font-weight: 700;">Login</h1>
+          <svg class="d-flex" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient x1="100%" y1="0%" x2="0%" y2="100%" id="logo-gradient-b">
+                    <stop stop-color="#39D8C8" offset="0%"/>
+                    <stop stop-color="#BCE4F4" offset="47.211%"/>
+                    <stop stop-color="#838DEA" offset="100%"/>
+                </linearGradient>
+                <path d="M32 16H16v16H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v14z" id="logo-gradient-a"/>
+                <linearGradient x1="23.065%" y1="25.446%" y2="100%" id="logo-gradient-c">
+                    <stop stop-color="#1274ED" stop-opacity="0" offset="0%"/>
+                    <stop stop-color="#1274ED" offset="100%"/>
+                </linearGradient>
+            </defs>
+            <g fill="none" fill-rule="evenodd">
+                <mask id="logo-gradient-d" fill="#fff">
+                    <use xlink:href="#logo-gradient-a"/>
+                </mask>
+                <use fill="url(#logo-gradient-b)" xlink:href="#logo-gradient-a"/>
+                <path fill="url(#logo-gradient-c)" mask="url(#logo-gradient-d)" d="M-16-16h32v32h-32z"/>
+            </g>
+        </svg>
+        </fieldset>
+        <div class="form-group mb-1">
+          {{ form.email.label(class="form-control-label") }}
+          {{ form.email(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group mb-3">
+          {{ form.password.label(class="form-control-label") }}
+          {{ form.password(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group mb-3">
+          {{ form.submit(class="btn btn-primary btn-block") }}
+        </div>
+
+      </form>
+      <div class="pt-3">
+        <small class="text-muted">
+          Don't have an account? <a class="ml-2" href="{{ url_for('register') }}">Sign up</a>
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

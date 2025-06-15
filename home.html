@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="title-banner d-flex justify-content-center pb-0">
+  <h2>My Virtual Fridge</h2>
+</div>
+<nav class="navbar navbar-expand navbar-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse">
+    <ul class="navbar-nav mr-auto options-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Add New Item
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Manual Entry</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Upload Receipt</a>
+          <a class="dropdown-item" href="#">Use Camera</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Filter
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Fruits</a>
+          <a class="dropdown-item" href="#">Vegetables</a>
+          <a class="dropdown-item" href="#">Grains</a>
+          <a class="dropdown-item" href="#">Protein</a>
+          <a class="dropdown-item" href="#">Dairy</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Expiring Soon</a>
+          <a class="dropdown-item" href="#">Fresh</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Low Quantity</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" style="position: absolute; right: 10px;">
+      <input class="form-control mr-sm-2" style="display: inline;" type="search" placeholder="Search by name" aria-label="Search">
+    </form>
+  </div>
+</nav>
+
+<div class="card invisible-card" style="border: none;">
+  <div class="card-body pt-1">
+
+    <div class="card-banner text-danger">
+      <div class="group-title">Expiring soon</div>
+      <hr class="divider">
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
+
+      <section class="col h-100">
+        <div class="card food-card">
+          <div class="icons">
+            <a title="View log">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/>
+                <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+              </svg>
+            </a>
+            <a title="Edit item details">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+            </svg>
+            </a>
+          </div>
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="{{ url_for('static', filename='img/banana.png') }}" class="p-3" alt="...">
+          </div>
+          <div class="">
+            <div class="card-body pb-0">
+              <h5 class="card-title">Banana</h5>
+              <ul class="details-list card-text pb-0">
+                <li>Quantity: 5</li>
+                <li>Last purchased: 6/1/25</li>
+                <li><em>Testing testing this is a note </em></li>
+              </ul>
+            </div>
+            <div class="card-footer p-1 pb-2">
+              <small class="text-body-secondary">
+                <span class="badge rounded-pill text-bg-primary">fresh</span>
+                <span class="badge rounded-pill text-bg-danger">fresh</span>
+                <span class="badge rounded-pill text-bg-success">fresh</span>
+                <span class="badge rounded-pill text-bg-warning">fresh</span>
+              </small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<div class="card invisible-card" style="border: none;">
+  <div class="card-body pt-1">
+
+    <div class="card-banner text-success">
+      <div class="group-title">All Foods</div>
+      <hr class="divider">
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
+
+      <section class="col h-100">
+        <div class="card food-card">
+          <div class="icons">
+            <a title="View log">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/>
+                <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+              </svg>
+            </a>
+            <a title="Edit item details">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+            </svg>
+            </a>
+          </div>
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="{{ url_for('static', filename='img/banana.png') }}" class="p-3" alt="...">
+          </div>
+          <div class="">
+            <div class="card-body pb-0">
+              <h5 class="card-title">Banana</h5>
+              <ul class="details-list card-text pb-0">
+                <li>Quantity: 5</li>
+                <li>Last purchased: 6/1/25</li>
+                <li><em>Testing testing this is a note </em></li>
+              </ul>
+            </div>
+            <div class="card-footer p-1 pb-2">
+              <small class="text-body-secondary">
+                <span class="badge rounded-pill text-bg-primary">fresh</span>
+                <span class="badge rounded-pill text-bg-danger">fresh</span>
+                <span class="badge rounded-pill text-bg-success">fresh</span>
+                <span class="badge rounded-pill text-bg-warning">fresh</span>
+              </small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+{% endblock content %}
